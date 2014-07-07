@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/06/2014, 12:55:50 PM
+    Author     : stitc_000
+*/
+html{
+    background-image: url("../img/background/fondo-paginas-web.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+header{
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: #ffffff;
+    text-align: center;
+    //background-color: cornflowerblue;
+    border-radius: 10px;
+    text-shadow: 3px 0px mediumblue;
+    padding: 20px;
+    font-size: 40px;
+}
+
+iframe{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+table{
+    //background-color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    //border-width: 0.5px;
+    border-style: hidden;
+}
+
+.map{
+    
+}
+
+.mapa{
+    text-align: center;
+    margin-left: 20px;
+    width: 35%;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 1px;
+    background-color: powderblue;
+}
+
+.contenido{
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    
+    border-style: solid;
+    margin-right: 20px;
+    border-radius: 6px;
+    border-width: 1px;
+    background-color: powderblue;
+}
+
+
