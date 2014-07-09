@@ -19,7 +19,7 @@ $parametros = array($idDepto);
 $datosDepto = $connect->setProcedimiento("obtenerDatasetsDepto", $parametros);
 //$nombreDepto = $connect->seleccionarDatosCondicion("nombre", "departamentos", "codigoDane = ".$idDepto);
 $arrayURL = $array->datosAArrayX($datosDepto);
-var_dump($arrayURL);
+//var_dump($arrayURL);
 $connect->cerrarConexion();
 
 $connect2 = new mySqlConnection();

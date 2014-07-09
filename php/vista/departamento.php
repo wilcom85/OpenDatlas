@@ -82,7 +82,8 @@
                 echo $msgNoData;
             ?>
             <div <?php echo $view;?> >
-                <iframe src="<?php echo $arrayDatos[0][6]; ?>" width="400" height="300" frameborder="0" style="border:0"></iframe>          </div>    
+                <iframe src="<?php echo $arrayDatos[0][6]; ?>" width="400" height="300" frameborder="0" style="border:0;"></iframe>          
+            </div>    
         </article>
         
         
@@ -90,9 +91,9 @@
             for($i=0;$i<count($arrayDatos);$i++){
                 echo "<article class='accordion'>";           
                 echo "<h3>".$arrayDatos[$i][3]."</h3>";
-                     ?>
-                    <iframe src="../classes/tablaInfo.php?contador=<?php echo $i;?>"  width="96%" height="500px" frameborder="0" style="border:0"></iframe>
-                    <?php
+                     
+                echo "<iframe src='../classes/tablaInfo.php?contador=$i'  width='96%' height='500px' frameborder='0' style='border:0;'></iframe>";
+                    
                 echo "</article>";
             }
             ?>
