@@ -14,13 +14,13 @@
         
         $ws = new webservice();
         //$ws->setURL($url);
-        
+        $ws->setURL($url);
+        $claves = $ws->getClaves();
 ?>
 <!DOCTYPE html>
 <html style="background-color: #ccffcc; background-image: none;">
     <head>
         <meta charset="utf-8" />
-        <link href="themes/jquery-ui-1.11.0.custom/jquery-ui.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
         <link href="../../themes/jquery-ui-1.11.0.custom/jquery-ui.css" rel="stylesheet">
         <link href="../../css/openDatlas.css" rel="stylesheet">
@@ -92,12 +92,39 @@
                 echo "<article class='accordion'>";           
                 echo "<h3>".$arrayDatos[$i][3]."</h3>";
                      
-                echo "<iframe src='../classes/tablaInfo.php?contador=$i'  width='96%' height='500px' frameborder='0' style='border:0;'></iframe>";
-                    
+                //echo "<iframe src='../classes/tablaInfo.php?contador=".$i."'  width='96%' height='500px' frameborder='0' style='border:0;'></iframe>";
+                
+                echo'<table>';
+                    echo"<a href='../classes/tablaInfo.php?contador=".$i."'>Info</a>";
+                    //$contador2=0;
+                    echo "<tr>";
+                        //echo $claves[2];
+                        for($il=2; $il < count($claves);$il++){
+                            echo $contador;
+                            echo "<td>";
+                               echo $claves[$il];
+                            echo "</td>";
+                         }
+                    echo "</tr>";
+                    $ws->setURL($url);
+                    $datos = $ws->getDatos();
+                    //var_dump($datos);
+                    for($n=0;$n<count($datos);$n++){
+                        echo "<tr>";
+                        for($m=2; $m<count($claves);$m++){
+                            echo "<td>";
+                                echo $datos[$n][$m];
+                            echo "</td>";
+                        }
+                        echo "</tr>";
+                     }
+                 echo"</table>";
+                
+                
                 echo "</article>";
             }
             ?>
-        
+        <a href="../classes/tablaInfo.php?contador="<?php echo$i?>>Info</a>
         <footer>
         </footer>
         <script src="../../themes/jquery-ui-1.11.0.custom/external/jquery/jquery.js"></script>

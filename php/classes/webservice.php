@@ -17,8 +17,20 @@ class webservice {
     
     private function leerURL(){
         $url = $this->url;
-        $json = file_get_contents($url);
+        //echo "url: " .$url;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $json = curl_exec ($ch);
+        curl_close ($ch);
+ 
+        //echo $var;
+        
+        
+        
+        //$json = file_get_contents($url);
+        //echo "json:" . $json;
         $data = json_decode($json,TRUE);
+        //echo "ok".$data;
         return $data;
     }
     
@@ -26,12 +38,18 @@ class webservice {
         $data = webservice::leerURL();
         $contador = 0;
         $arrayClaves = array();
+        //echo "ok2".$idata;        
+
+           //var_dump($idata);
+
+        //echo count($data['d']); 
         $cantidad = count($data['d']);        
             foreach ($data['d'][0] as $field=>$value){
                 $arrayClaves[$contador] = $field;
+                //echo "1".$arrayClaves[$contador];
                 $contador++;
             }
-        
+            //var_dump($arrayClaves);
         return $arrayClaves;
     }
     
@@ -56,6 +74,7 @@ class webservice {
     
     public function setURL($url) {
         $this -> url = $url;
+        //echo $this->url;
     }
     
     public function getClaves(){

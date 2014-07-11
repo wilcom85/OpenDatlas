@@ -14,18 +14,33 @@ include_once '../classes/webservice.php';
     $ws = new webservice();
     $ws->setURL($url);
     $claves = $ws->getClaves();
+    //echo $claves;
     //var_dump($claves);
     //tablaInfo::tablaInfo();
 
 //class tablaInfo{
+//function tablaInfo(){    
+?>
 
-//function tablaInfo(){
-    echo"<table>";
-        $contador2=0;
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabla Info</title>
+        <link href="../../themes/jquery-ui-1.11.0.custom/jquery-ui.css" rel="stylesheet">
+        <link href="../../css/openDatlas.css" rel="stylesheet">
+    </head>
+    <body>
+<?php
+    
+
+    echo'<table>';
+    
+        //$contador2=0;
         echo "<tr>";
-            for($i=2; $i<count($claves);$i++){
+            for($i=2; $i < count($claves);$i++){
+                echo $contador;
                 echo "<td class='ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all'>";
-                    echo $claves[$i];
+                   echo $claves[$i];
                 echo "</td>";
              }
         echo "</tr>";
@@ -43,5 +58,6 @@ include_once '../classes/webservice.php';
      }
      echo"</table>";
 //}
-
-//}
+?>
+</body>
+</html>

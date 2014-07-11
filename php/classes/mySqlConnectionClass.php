@@ -14,14 +14,14 @@
 //include '../Vista/dialogue.php';
 
 class mySqlConnection {
-    private $server = "205.178.146.112";
-    private $username = "opendatlas";
-    private $password = "Wilcom80378556";
-    private $dbname = "open_datlas";
-//    private $server = "127.0.0.1:3306";
-//    private $username = "root";
-//    private $password = "";
+//    private $server = "205.178.146.112";
+//    private $username = "opendatlas";
+//    private $password = "Wilcom80378556";
 //    private $dbname = "open_datlas";
+    private $server = "127.0.0.1:3306";
+    private $username = "root";
+    private $password = "";
+    private $dbname = "open_datlas";
     private $connection;    
     private $selection;
     private $dialogue;
